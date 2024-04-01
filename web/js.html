@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function으로 선언된 함수도 호이스팅된다!!!
+        varScopeTest();
+        letScopetest();
+
+        console.log("hello javascrpit");
+        // var - 변수, 상수 뭐든 다 썻다
+
+        // let -- 변수를 선언할때 쓰는 예약어 
+        // const - 상수 선언 
+        // 1. var 중복 선언 가능
+        // 2. 호이스팅되지 않는다
+        // 3. let - block 단위
+
+        function varScopeTest(){
+            if(true){
+                var varScope= 10;
+            }
+        }
+         varScopeTest();
+
+         function letScopetest(){
+            if(true){
+                let letScope = 10;
+            }
+            // console.log(letScope); 사용불가
+         }
+         letScopetest();
+
+    </script>
+    <div id = "test"></div>
+    
+</body>
+</html>
