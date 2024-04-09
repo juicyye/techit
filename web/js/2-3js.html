@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const doggy = {
+            name: "멍멍이",
+            age :2,
+            sount: "멍멍",
+        };
+
+        
+
+        <!-- 주어진 객체의 모든 프로퍼티와 그 값을 콘솔에 출력하는 코드를 작성하세요. -->
+
+        for(let key in doggy){
+            console.log(doggy[key])
+        }
+
+        <!-- 사용자 정보가 담긴 객체 배열에서 나이가 30 이상인 사람들만 찾아 새 배열을 만드는 코드를 작성하세요. -->
+        const user = [
+            {name: "alice", age: 16},
+            {name: "alice", age: 36},
+            {name: "alice", age: 66},
+            {name: "alice", age: 76},
+            {name: "alice", age: 26}
+        ];
+        for(let i of user){
+            if(i.age >= 30){
+                console.log(i);
+            }
+        }
+
+
+        <!-- 숫자 배열에서 가장 큰 숫자를 찾는 코드를 작성하세요. -->
+
+        <!-- 숫자 배열이 주어졌을 때, 배열 안에 특정 숫자가 몇 개 있는지 세는 코드를 작성하세요. -->
+
+        
+    </script>
+</body>
+</html>

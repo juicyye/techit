@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <h2 id="number">0</h2>
+    <div>
+      <button id="increase">+1</button>
+      <button id="decrease">-1</button>
+    </div>
+
+    <script>
+        let number =0;
+        document.getElementById('increase').addEventListener('click',function(){
+            number++;
+            alert('+1')
+            document.getElementById('number').innerText = number;
+        })
+        document.getElementById('decrease').addEventListener('click',function(){
+            number--;
+            alert('-1')
+            document.getElementById('number').innerText = number;
+        })
+    </script>
+  </body>
+</html>

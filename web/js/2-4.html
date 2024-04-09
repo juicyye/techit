@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const codos = [
+            {id : 1,
+            text : "자바스크립트",
+        done : true
+    },
+    {id : 2,
+            text : "자바스크립트",
+        done : true
+    }
+        ];
+
+        const index = codos.findIndex((todo) => todo.id === 1);
+        const tasksNotDone = codos.filter(todo => todo.id===3);
+        console.log(index);
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const ironman={
+            name: "토니 스타크",
+            actor: "로다주",
+            alias: "아이언맨",
+
+        };
+
+
+        function print(hero){
+            const text = `${hero.name}(${hero.alias}) 역할을 맡은 배우는 ${hero.actor}`;
+            console.log(text);
+        
+        }
+
+        function print({alias, name, actor}){
+            const text = `${alias}(${name}) 역할을 맡은 배우는 ${actor} 입니다.`;
+            console.log(text);
+        }
+        const dog = {
+            name: "멍멍이",
+            sound: "멍멍!!",
+            _a: 1,
+            say : function () {
+                console.log(this.sound);
+                console.log(this);
+            },
+            get a(){
+                console.log("get a() 함수 실행!!");
+                return this._a;
+            }
+        };
+
+        print(ironman);
+        dog.say();
+        console.log(dog.a);
+    </script>
+</body>
+</html>

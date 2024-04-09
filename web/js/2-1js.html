@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        hello();
+
+        // 호이스팅 되지않는다 오류발생
+        // func1();
+
+        // 함수 호이스팅
+        function hello(){
+            console.log("hello");
+        }
+        // 중복 정의 가능
+        // 중복 정의 되었을때는 가장 마지막에 정의 함수가 출력
+        function hello(){
+            console.log("carami helllo!!~~~~");
+        }
+        let func1 = function(){
+            console.log("func Hello!!");
+        }
+        
+        // 화살표 함수
+        const func2 = () => console.log("func2 hello");
+
+        function hi(a){
+            console.log("hello " + a);
+        }
+
+        const hi2 = a => console.log("hello "  + a);
+
+        function sum(a,b){
+            return a+b;
+        }
+
+        const sum2 = (a,b) => a+b;
+        
+    </script>
+</body>
+</html>
