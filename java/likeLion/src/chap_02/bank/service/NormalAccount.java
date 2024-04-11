@@ -2,7 +2,6 @@ package chap_02.bank.service;
 
 import chap_02.bank.exception.InsufficientFundsException;
 import chap_02.bank.exception.WrongNumber;
-import chap_02.bank.service.refac.Account;
 
 public class NormalAccount {
     // 통장 객체는 입금과 출금 기능을 가지며, 출금 시 잔액 부족 예외를 발생시킬 수 있어야 합니다.
