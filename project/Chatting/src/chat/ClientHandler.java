@@ -37,26 +37,30 @@ public class ClientHandler implements Runnable {
                 } else if ("/list".equals(input)) {
                     PServer.listChatRooms(out);
                 } else if (input.startsWith("/join")) {
-                    // 클라이언트가 방에 입장하는 경우, 해당 방에 입장했음을 플래그로 표시
-                    String[] parts = input.split(" ");
-                    if (parts.length == 2) {
-                        String newRoom = parts[1]; // 새로운 방 정보 저장
-                        if (currentRoom != null) {
-                            // 이전 방에서 클라이언트 제거
-                            PServer.leaveRoom(currentRoom, this);
-                        }
-                        currentRoom = newRoom; // 클라이언트가 입장한 방 설정
-                        out.println("방 " + currentRoom + "에 입장하였습니다.");
-                        PServer.joinRoom(currentRoom, this); // 서버에 해당 클라이언트가 방에 입장했음을 전달
+                    if (PServer.chatRooms.isEmpty()) {
+                        out.println("참여할 채팅방이 없습니다.");
                     } else {
-                        out.println("잘못된 명령입니다.");
+                        // 클라이언트가 방에 입장하는 경우, 해당 방에 입장했음을 플래그로 표시
+                        String[] parts = input.split(" ");
+                        if (parts.length == 2) {
+                            String newRoom = parts[1]; // 새로운 방 정보 저장
+                            if (currentRoom != null) {
+                                // 이전 방에서 클라이언트 제거
+                                PServer.leaveRoom(currentRoom, this);
+                            }
+                            currentRoom = newRoom; // 클라이언트가 입장한 방 설정
+                            out.println("방 " + currentRoom + "에 입장하였습니다.");
+                            PServer.joinRoom(currentRoom, this); // 서버에 해당 클라이언트가 방에 입장했음을 전달
+                        } else {
+                            out.println("잘못된 명령입니다.");
+                        }
                     }
                 } else if ("/exit".equals(input)) {
-                    if(currentRoom != null) {
+                    if (currentRoom != null) {
                         // 클라이언트가 방에서 나가는 경우, 해당 방에서 나왔음을 플래그로 표시
                         currentRoom = null; // 현재 방 정보 초기화
                         out.println("방에서 나왔습니다.");
-                    } else{
+                    } else {
                         out.println("나갈 수 있는 상태가 아닙니다.");
                     }
 
@@ -80,6 +84,7 @@ public class ClientHandler implements Runnable {
             e.printStackTrace();
         }
     }
+
     // 현재 클라이언트가 속한 방의 정보 반환
     public String getCurrentRoom() {
         return currentRoom;

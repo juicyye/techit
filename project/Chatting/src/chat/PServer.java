@@ -14,8 +14,8 @@ import java.util.Map;
 public class PServer {
     private static final int PORT = 12345;
     static final Map<String, PrintWriter> users = new HashMap<>();
-    private static final List<String> chatRooms = new ArrayList<>();
-    private static final Map<String, List<ClientHandler>> roomClients = new HashMap<>(); // 방에 속한 클라이언트 목록
+    public static final List<String> chatRooms = new ArrayList<>();
+    public static final Map<String, List<ClientHandler>> roomClients = new HashMap<>(); // 방에 속한 클라이언트 목록
     private static int roomNumber = 1;
 
     public static void main(String[] args) {
