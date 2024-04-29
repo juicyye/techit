@@ -52,9 +52,14 @@ public class ClientHandler implements Runnable {
                         out.println("잘못된 명령입니다.");
                     }
                 } else if ("/exit".equals(input)) {
-                    // 클라이언트가 방에서 나가는 경우, 해당 방에서 나왔음을 플래그로 표시
-                    currentRoom = null; // 현재 방 정보 초기화
-                    out.println("방에서 나왔습니다.");
+                    if(currentRoom != null) {
+                        // 클라이언트가 방에서 나가는 경우, 해당 방에서 나왔음을 플래그로 표시
+                        currentRoom = null; // 현재 방 정보 초기화
+                        out.println("방에서 나왔습니다.");
+                    } else{
+                        out.println("나갈 수 있는 상태가 아닙니다.");
+                    }
+
                 } else {
                     // 클라이언트가 방에 입장한 경우에만 해당 방의 다른 클라이언트에게 메시지 전송
                     if (currentRoom != null) {
