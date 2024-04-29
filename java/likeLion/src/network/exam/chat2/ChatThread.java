@@ -61,38 +61,6 @@ public class ChatThread extends Thread {
             chatThreads.add(list.get(i));
         }
         Collections.copy(chatThreads, this.list);
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-
-
-
         try {
             for (int i = 0; i < chatThreads.size(); i++) {
                 ChatThread ct = chatThreads.get(i);

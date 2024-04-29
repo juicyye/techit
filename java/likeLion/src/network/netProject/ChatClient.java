@@ -7,16 +7,17 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Scanner;
 
+import static network.netProject.HostAndPort.HOST;
+import static network.netProject.HostAndPort.PORT_NUMBER;
+
 public class ChatClient {
     public static void main(String[] args) throws Exception{
-        String hostName = "localhost"; // 서버가 실행 중인 호스트의 이름 또는 IP 주소
-        int portNumber = 12345; // 서버와 동일한 포트 번호 사용
 
         Socket socket = null;
         PrintWriter out = null;
         BufferedReader in = null;
         try{
-            socket = new Socket(hostName, portNumber);
+            socket = new Socket(HOST, PORT_NUMBER);
             out = new PrintWriter(socket.getOutputStream(), true);
             in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             Scanner stdIn = new Scanner(System.in);
@@ -50,11 +51,11 @@ public class ChatClient {
             socket.close();
 
         } catch (IOException e) {
-            System.out.println("Exception caught when trying to connect to " + hostName + " on port " + portNumber);
+            System.out.println("Exception caught when trying to connect to " + HOST + " on port " + PORT_NUMBER);
             e.printStackTrace();
         }
     }
 }
 
 
-}
+

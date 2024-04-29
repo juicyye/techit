@@ -16,7 +16,5 @@ public class ChatServer {
             ChatThread chatThread = new ChatThread(socket, list);
             chatThread.start();
         }
-
-
     }
 }
